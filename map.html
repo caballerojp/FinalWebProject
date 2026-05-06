@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Baguio Map</title><!-- For the title -->
+  <link rel="stylesheet" href="style.css"> <!-- This is for the style/css -->
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <img src="Logo.png" class="logo"> <!-- This is for the logo -->
+      <h1 class="site-name">
+        <span class="highlight-b">B</span>aguio <!-- This is for the highlight of the letter B -->
+        <span class="highlight-g">G</span>uides <!-- This is for the highlight of the letter g -->
+      </h1>
+    </div>
+
+  <div class="nav-right">
+    <a href="index.html">Home</a> <!-- This is for the home page in navigation -->
+    <a href="map.html" class="active-page">Map</a> <!-- This is for the Map page in navigation, active page for the user to see when viewing this page -->
+    <a href="review.html">Reviews</a> <!-- This is for the reviews page in navigation -->
+  </div>
+</nav>
+<div class="hero"> <!-- Hero section (top banner) -->
+  <div class="hero-content"> <!-- Text inside hero -->
+    <span class="hero-tag">✦ Travel Guide</span> <!-- Small label -->
+    <h1>The City of <em>Pines</em> Awaits You</h1> <!-- Main title -->
+    <p>
+      Nestled in the Cordillera mountains at 1,500 meters above sea level,
+      Baguio City offers cool breezes, lush pine forests, and a rich tapestry of culture and nature to explore.
+    </p> <!-- Description -->
+    <div class="hero-stats"> 
+      <div>
+        <strong id="time">--:--</strong><br> <!-- This is for the local time feature -->
+        Local Time
+      </div>
+      <div>
+        <strong id="weather-temp">--°C</strong><br> <!-- This is for the real time weather temp feature -->
+      </div>
+      <div>
+        <strong id="spot">--</strong><br> <!-- This is for the recomended place feature -->
+        Recommended
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container"> <!-- Section for map title -->
+  <h1 id="map-title">Map of Baguio</h1> <!-- Map title -->
+
+  <p id="map-subtitle" style="text-align:center; color:#555; margin-bottom: 20px;">
+    Showing: All of Baguio City
+  </p> <!-- Subtitle -->
+</div>
+
+<div class="map-wrapper"> <!-- Holds the map -->
+  <iframe
+    id="map-frame"
+    src="https://www.google.com/maps?q=Baguio+City&output=embed"> <!-- Google map link -->
+  </iframe> <!-- Google map embed -->
+</div>
+
+<div class="container"> <!-- Bottom section -->
+  
+  <p style="text-align:center; color:#555; margin-bottom: 20px;">
+    Use ctrl + scroll to zoom the map. <!-- Text for instruction -->
+  </p> 
+
+  <div class="spot-list"></div> <!-- List of places will appear here -->
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Travel Guide | Baguio City Tourism</p> <!-- Copyright text -->
+  <p>
+    <a href="https://www.baguio.gov.ph" target="_blank">Official Baguio Website</a> | <!-- Link to official Baguio website (opens new tab) -->
+    <a href="#">Back to Top</a> <!-- Scrolls back to the top of the page -->
+  </p>
+</footer>
+
+<script>
+  // List of tourist spot
+  var spots = {
+    nightmarket:  { name: 'Night Market',       query: 'Baguio+Night+Market+Harrison+Road+Baguio+City' },
+    burnham:      { name: 'Burnham Park',        query: 'Burnham+Park+Baguio+City' },
+    mines:        { name: 'Mines View Park',     query: 'Mines+View+Park+Baguio+City' },
+    campjohnhay:  { name: 'Camp John Hay',       query: 'Camp+John+Hay+Baguio+City' },
+    botanical:    { name: 'Botanical Garden',    query: 'Botanical+Garden+Baguio+City' },
+    strawberry:   { name: 'Strawberry Farm',     query: 'Strawberry+Farm+La+Trinidad+Benguet' },
+    bencab:       { name: 'BenCab Museum',       query: 'BenCab+Museum+Asin+Road+Tuba+Benguet' },
+    wright:       { name: 'Wright Park',         query: 'Wright+Park+Baguio+City' },
+    asin:         { name: 'Asin Tuba, Benguet',  query: 'Nangalisan+Tuba+Benguet'   },
+    mansion:      { name: 'The Mansion',              query: 'The+Mansion+Baguio+City' },
+    session:   { name: 'Session Road',             query: 'Session+Road+Baguio+City' },
+    cathedral: { name: 'Baguio Cathedral',         query: 'Our+Lady+Atonement+Cathedral+Baguio' },
+    loakan:    { name: 'Philippine Military Academy', query: 'PMA+Fort+Del+Pilar+Baguio' },
+    sto_tomas: { name: 'Mt. Santo Tomas',          query: 'Mount+Santo+Tomas+Tuba+Benguet' },
+    igorot:    { name: 'Igorot Stone Kingdom',     query: 'Igorot+Stone+Kingdom+Baguio' },
+    tam_awan:  { name: 'Tam-awan Village',         query: 'Tam-awan+Village+Baguio' },
+    ataki:   { name: 'Ataki Falls, Camp 3',             query: 'Ataki+Falls+Camp3+Tuba+Baguio' }
+  };
+
+  function showSpot(id) {
+    if (!spots[id]) return;
+
+    var spot = spots[id];
+    var frame = document.getElementById('map-frame');
+    var title = document.getElementById('map-title');
+    var subtitle = document.getElementById('map-subtitle');
+
+
+    frame.src = 'https://www.google.com/maps?q=' + spot.query + '&output=embed';
+
+ 
+    title.textContent = spot.name;
+    subtitle.textContent = 'Showing: ' + spot.name;
+
+ 
+    var items = document.querySelectorAll('.spot-item');
+    for (var i = 0; i < items.length; i++) {
+      items[i].classList.remove('active');
+    }
+    event.currentTarget.classList.add('active');
+
+ 
+    document.getElementById('map-frame').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  
+  window.onload = function() {
+    var params = new URLSearchParams(window.location.search);
+    var spot = params.get('spot');
+    if (spot && spots[spot]) {
+      showSpot(spot);
+
+      var items = document.querySelectorAll('.spot-item');
+      var keys = Object.keys(spots);
+      var idx = keys.indexOf(spot);
+      if (idx !== -1 && items[idx]) {
+        items[idx].classList.add('active');
+      }
+    }
+  };
+
+(function () {
+
+  fetch("https://api.open-meteo.com/v1/forecast?latitude=16.4023&longitude=120.5960&current_weather=true")
+    .then(response => response.json())
+    .then(data => {
+      var temp = Math.round(data.current_weather.temperature);
+      document.getElementById("weather-temp").textContent = temp + "°C";
+    })
+    .catch(() => {
+      document.getElementById("weather-temp").textContent = "N/A";
+    });
+
+  var spots = [
+  "Night Market",
+  "Burnham Park",
+  "Mines View Park",
+  "Camp John Hay",
+  "Botanical Garden",
+  "Strawberry Farm",
+  "BenCab Museum",
+  "Wright Park",
+  "Asin Tuba, Benguet",
+  "The Mansion",
+  "Session Road",
+  "Baguio Cathedral",
+  "Philippine Military Academy",
+  "Mt. Santo Tomas",
+  "Igorot Stone Kingdom",
+  "Tam-awan Village",
+  "Camp 4 Tuba"
+];
+
+  var random = Math.floor(Math.random() * spots.length);
+  document.getElementById("spot").textContent = "📍 " + spots[random];
+  
+  setInterval(() => {
+    var now = new Date();
+    document.getElementById("time").textContent =
+      now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  }, 1000);
+
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Baguio Home</title><!-- For the title -->
+  <link rel="stylesheet" href="style.css"> <!-- This is for the style/css -->
+</head>
+<body>
+
+<nav>
+  <div class="nav-left">
+    <img src="Logo.png" class="logo"> <!-- This is for the logo -->
+    <h1 class="site-name">
+      <span class="highlight-b">B</span>aguio <!-- This is for the highlight of the letter B -->
+      <span class="highlight-g">G</span>uides <!-- This is for the highlight of the letter g -->
+    </h1>
+  </div>
+  <div class="nav-right">
+    <a href="index.html" class="active-page">Home</a> <!-- This is for the home page in navigation, active page for the user to see when viewing this page-->
+    <a href="map.html">Map</a> <!-- This is for the Map page in navigation -->
+    <a href="review.html">Reviews</a> <!-- This is for the reviews page in navigation -->
+  </div>
+</nav>
+
+
+<div class="hero">
+  <div class="hero-content">
+    <span class="hero-tag">✦ Travel Guide</span> <!-- This is for the small icon -->
+    <h1>The City of <em>Pines</em> Awaits You</h1> <!-- This is for the header Text -->
+    <p>Nestled in the Cordillera mountains at 1,500 meters above sea level, <!-- This is for the paragraph-->
+      Baguio City offers cool breezes, lush pine forests, and a rich tapestry of culture and nature to explore.</p>
+      
+      <div class="hero-stats"> <!-- This class is for the little features below -->
+      <div>
+        <strong id="time">--:--</strong><br> <!-- This is for the local time feature -->
+        Local Time
+      </div>
+      <div>
+        <strong id="weather-temp">--°C</strong><br> <!-- This is for the real time weather temp feature -->
+        Current Temp
+      </div>
+      <div>
+        <strong id="spot">--</strong><br> <!-- This is for the recomended place feature -->
+        Recommended
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Top Attractions in Baguio</h2> <!-- Section header -->
+
+<div class="cards"> <!-- Container for all cards -->
+
+  <div class="card" onclick="openModal('nightmarket')"> <!-- Small card, opens modal when clicked -->
+    <img src="night.jpg" alt="Night Market"> <!-- Image shown on the card -->
+    <div class="card-content"> <!-- Holds the text content of the card -->
+      <h3>Night Market</h3> <!-- Name of the place -->
+      <p>The Baguio Night Market is famous along Harrison Road.</p> <!-- Short description about the place -->
+    </div>
+  </div>
+
+
+  <div class="card" onclick="openModal('burnham')"> 
+    <img src="burn.png" alt="Burnham Park"> 
+    <div class="card-content"> 
+      <h3>Burnham Park</h3> 
+      <p>A relaxing park with a lagoon and greenery.</p> 
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('mines')">
+    <img src="mines.jpg" alt="Mines View Park">
+    <div class="card-content">
+      <h3>Mines View Park</h3>
+      <p>Famous for mountain views and scenic landscapes.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('campjohnhay')">
+    <img src="camp.jpg" alt="Camp John Hay">
+    <div class="card-content">
+      <h3>Camp John Hay</h3>
+      <p>Great for nature walks and relaxing trails.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('botanical')">
+    <img src="botanical.jpeg" alt="Botanical Garden">
+    <div class="card-content">
+      <h3>Botanical Garden</h3>
+      <p>A serene garden showcasing local flora and Igorot culture.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('strawberry')">
+    <img src="strawberry.jpg" alt="Strawberry Farm">
+    <div class="card-content">
+      <h3>Strawberry Farm</h3>
+      <p>Pick fresh strawberries at La Trinidad Valley farm.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('bencab')">
+    <img src="bencab.jpg" alt="BenCab Museum">
+    <div class="card-content">
+      <h3>BenCab Museum</h3>
+      <p>World-class art museum by National Artist Ben Cabrera.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('wright')">
+    <img src="wright.jpg" alt="Wright Park">
+    <div class="card-content">
+      <h3>Wright Park</h3>
+      <p>Horse riding and pine-tree lined paths near The Mansion.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('falls')">
+    <img src="falls.jpg" alt="Asin Tuba">
+    <div class="card-content">
+      <h3>Asin Tuba, Benguet</h3>
+      <p>A relaxing swimming spot in the middle of mountains.</p>
+    </div>
+  </div>
+
+
+  <div class="card" onclick="openModal('mansion')">
+    <img src="mansion.jpg" alt="The Mansion">
+    <div class="card-content">
+      <h3>The Mansion</h3>
+      <p>Official summer residence of the Philippine President with grand iron gates.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('session')">
+    <img src="session.jpeg" alt="Session Road">
+    <div class="card-content">
+      <h3>Session Road</h3>
+      <p>The beating heart of Baguio — restaurants, cafés, shops, and festivals.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('cathedral')">
+    <img src="cathedral.jpeg">
+    <div class="card-content">
+      <h3>Baguio Cathedral</h3>
+      <p>Iconic pink-roofed cathedral atop a hill overlooking Session Road.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('loakan')">
+    <img src="pma.jpg" alt="Philippine Military Academy">
+    <div class="card-content">
+      <h3>Philippine Military Academy</h3>
+      <p>Historic military school open to visitors — stunning parade grounds.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('sto_tomas')">
+    <img src="tomas.jpg" alt="Mt. Santo Tomas">
+    <div class="card-content">
+      <h3>Mt. Santo Tomas</h3>
+      <p>Highest peak near Baguio offering breathtaking sunrise views.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('igorot')">
+    <img src="stone.jpg" alt="Igorot Stone Kingdom">
+    <div class="card-content">
+      <h3>Igorot Stone Kingdom</h3>
+      <p>Cultural theme park celebrating Cordilleran heritage with stone structures.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('tam_awan')">
+    <img src="tamawan.jpg" alt="Tam-awan Village">
+    <div class="card-content">
+      <h3>Tam-awan Village</h3>
+      <p>Artists' village featuring Ifugao huts and sweeping valley views.</p>
+    </div>
+  </div>
+
+  <div class="card" onclick="openModal('ataki')">
+    <img src="camp4.jpeg" alt="Ataki Falls">
+    <div class="card-content">
+      <h3>Ataki Falls, Camp 3</h3>
+      <p>Natural river with falls and clear crystal water .</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModal()"></div> <!-- Dark background overlay, closes modal when clicked -->
+
+<div class="modal" id="modal-nightmarket"> <!-- Main modal box for Night Market -->
+  <button class="modal-close" onclick="closeModal()">✕</button> <!-- Close button -->
+  <img src="night.jpg" alt="Night Market"> <!-- Image of the Night Market -->
+  <h2>Baguio Night Market</h2> <!-- Title of the modal -->
+  <p><strong>Location:</strong> Harrison Road, Baguio City</p> <!-- Shows the location -->
+  <p><strong>Open:</strong> Every night, 10:00 PM – 2:00 AM</p> <!-- Shows the opening hours -->
+  <p><strong>About:</strong> The Baguio Night Market stretches along Harrison Road and is one of the most beloved local experiences in the city. You'll find secondhand clothes (ukay-ukay), local street food like taho, kwek-kwek, and isaw, as well as handcrafted souvenirs and accessories at very affordable prices.</p> <!-- Description of the place -->
+  <p><strong>Tips:</strong> Bring cash, wear comfortable shoes, and arrive early to get the best picks. Watch your belongings in the crowd.</p> <!-- Helpful tips for visitors -->
+  <p><strong>How to get there:</strong> From anywhere in Baguio City, take a jeepney or taxi going to Harrison Road or Burnham Park. It’s within walking distance from Session Road and most central hotels.</p> <!-- Directions to the place -->
+  <a href="map.html?spot=nightmarket" class="modal-map-btn">📍 View on Map</a> <!-- Button to view location on map -->
+</div>
+
+<div class="modal" id="modal-burnham">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="burn.png" alt="Burnham Park">
+  <h2>Burnham Park</h2>
+  <p><strong>Location:</strong> Jose Abad Santos Drive, Baguio City</p>
+  <p><strong>Open:</strong> Daily, 5:00 AM – 9:00 PM</p>
+  <p><strong>About:</strong> Burnham Park is the central park of Baguio City, designed by American architect Daniel Burnham. It features a man-made lagoon where visitors can rent boats, a flower garden, rose garden, bike rentals, and open picnic areas.</p>
+  <p><strong>Tips:</strong> Rent a bike and ride around the park. Visit the Rose Garden in the morning when flowers are freshest.</p>
+  <p><strong>How to get there:</strong> Located at the city center. Ride any jeepney heading to town proper, Session Road, or Harrison Road. It’s easily accessible by foot from most areas in downtown Baguio.</p>
+  <a href="map.html?spot=burnham" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+<div class="modal" id="modal-mines">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="mines.jpg" alt="Mines View Park">
+  <h2>Mines View Park</h2>
+  <p><strong>Location:</strong> Mines View, Baguio City</p>
+  <p><strong>Open:</strong> Daily, 6:00 AM – 6:00 PM</p>
+  <p><strong>About:</strong> Mines View Park overlooks the old mining town of Itogon and the Cordillera mountain range. The park is lined with souvenir shops selling woodcrafts, silver jewelry, and Baguio ref magnets.</p>
+  <p><strong>Tips:</strong> Go early in the morning for the clearest views before the mist rolls in. Bargain politely at the souvenir stalls.</p>
+  <p><strong>How to get there:</strong> From Baguio City, ride a jeepney bound for Mines View Park (available at terminals near Session Road). Taxis are also readily available for a quicker trip.</p>
+  <a href="map.html?spot=mines" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+<div class="modal" id="modal-campjohnhay">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="camp.jpg" alt="Camp John Hay">
+  <h2>Camp John Hay</h2>
+  <p><strong>Location:</strong> Camp John Hay, Baguio City</p>
+  <p><strong>Open:</strong> Daily, 6:00 AM – 10:00 PM</p>
+  <p><strong>About:</strong> Camp John Hay is a former American military rest and recreation facility now transformed into a forest reserve and leisure destination. It features pine-forested trails, a golf course, the historical Bell House, restaurants, and a cemetery of negativism.</p>
+  <p><strong>Tips:</strong> The forest trails are free to walk. Grab a coffee at one of the cafes inside and enjoy the cool air surrounded by tall pine trees.</p>
+  <p><strong>How to get there:</strong> From Baguio City, take a jeepney bound for Camp John Hay or Scout Barrio. You can also take a taxi directly to the main entrance.</p>
+  <a href="map.html?spot=campjohnhay" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+<div class="modal" id="modal-botanical">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="botanical.jpeg" alt="Botanical Garden">
+  <h2>Botanical Garden</h2>
+  <p><strong>Location:</strong> Leonard Wood Road, Baguio City</p>
+  <p><strong>Open:</strong> Daily, 6:00 AM – 6:00 PM | Free Entrance</p>
+  <p><strong>About:</strong> Baguio's Botanical Garden is a peaceful green space that celebrates both the natural beauty of the region and the indigenous Igorot culture. You can find life-sized Igorot village displays, native plant collections, and quiet walking paths.</p>
+  <p><strong>Tips:</strong> Entrance is free! It's a great stop for a quiet morning walk. Look for the native huts that demonstrate traditional mountain province architecture.</p>
+  <p><strong>How to get there:</strong> Ride a jeepney from town heading to Pacdal, Mines View, or Navy Base. Ask the driver to drop you off at Botanical Garden.</p>
+  <a href="map.html?spot=botanical" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+<div class="modal" id="modal-strawberry">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="strawberry.jpg" alt="Strawberry Farm">
+  <h2>Strawberry Farm</h2>
+  <p><strong>Location:</strong> La Trinidad, Benguet (near Baguio)</p>
+  <p><strong>Open:</strong> Daily, 6:00 AM – 5:00 PM</p>
+  <p><strong>About:</strong> The La Trinidad Strawberry Farm is one of the most popular side trips from Baguio City. Visitors can walk through rows of strawberry plants and pick their own fresh berries. The farm is especially lush from December to May.</p>
+  <p><strong>Tips:</strong> The picking season peaks from January to March. Wear shoes you don't mind getting muddy.</p>
+  <p><strong>How to get there:</strong> From Baguio City, ride a jeepney bound for La Trinidad (available at Magsaysay Avenue). Ask to be dropped off at Strawberry Farm.</p>
+  <a href="map.html?spot=strawberry" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+<div class="modal" id="modal-bencab">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="bencab.jpg" alt="BenCab Museum">
+  <h2>BenCab Museum</h2>
+  <p><strong>Location:</strong> Asin Road, Tuba, Benguet (near Baguio)</p>
+  <p><strong>Open:</strong> Tuesday – Sunday, 9:00 AM – 6:00 PM</p>
+  <p><strong>About:</strong> The BenCab Museum is a world-class art museum dedicated to the works of National Artist Benedicto Cabrera (BenCab) and other Filipino artists. The museum is built into a hillside surrounded by lush gardens and a small lake.</p>
+  <p><strong>Tips:</strong> Allow at least 2–3 hours to fully explore. The outdoor garden and lake area are just as beautiful as the galleries inside.</p>
+  <p><strong>How to get there:</strong> From Baguio City, ride a jeepney bound for Asin Road. Ask to be dropped off at BenCab Museum. You may need a short tricycle ride for the final stretch.</p>
+  <a href="map.html?spot=bencab" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+<div class="modal" id="modal-wright">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="wright.jpg" alt="Wright Park">
+  <h2>Wright Park</h2>
+  <p><strong>Location:</strong> Gibraltar Road, Baguio City</p>
+  <p><strong>Open:</strong> Daily, 6:00 AM – 6:00 PM</p>
+  <p><strong>About:</strong> Wright Park is a wide open field famous for horseback riding, located right beside The Mansion. The park features a long reflecting pool lined with tall pine trees, making it one of the most scenic spots in Baguio.</p>
+  <p><strong>Tips:</strong> Try horseback riding early in the morning. Don't forget to visit The Mansion gate nearby for a great photo opportunity.</p>
+  <p><strong>How to get there:</strong> Ride a jeepney bound for Mines View Park or Pacdal from Baguio City. Ask to be dropped off at Wright Park.</p>
+  <a href="map.html?spot=wright" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+<div class="modal" id="modal-falls">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="falls.jpg" alt="Asin Tuba">
+  <h2>Asin Tuba, Benguet</h2>
+  <p><strong>Location:</strong> Asin Rd, Tuba Benguet</p>
+  <p><strong>Open:</strong> Daily, 6:00 AM – 6:00 PM</p>
+  <p><strong>About:</strong> This swimming spot is nestled in the heart of the mountains and is well known for its refreshingly cold and crystal-clear waters, especially during the hot season.</p>
+  <p><strong>Tips:</strong> Bring towels, as the water can be quite cold especially during the colder months.</p>
+  <p><strong>How to get there:</strong> From Baguio City, ride a jeepney bound for Asin Road. Ask to be dropped off at the nearest resort or falls area. A short tricycle ride may be needed depending on your exact destination.</p>
+  <a href="map.html?spot=asin" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+
+<div class="modal" id="modal-mansion">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="mansion.jpg" alt="The Mansion">
+  <h2>The Mansion</h2>
+  <p><strong>Location:</strong> Gibraltar Road, Baguio City</p>
+  <p><strong>Open:</strong> Daily, 7:00 AM – 5:00 PM (grounds only)</p>
+  <p><strong>About:</strong> The Mansion is the official summer residence of the President of the Philippines. Its iconic white wrought-iron gate and well-manicured gardens make it one of Baguio's most photographed landmarks. The main house is not open to the public, but the gate area and grounds are a popular photo spot, especially on weekends when guards in formal uniform are on duty.</p>
+  <p><strong>Tips:</strong> Combine this visit with Wright Park next door. Morning visits offer the best lighting for photos. Entrance to the gate area is free.</p>
+  <p><strong> How to get there:</strong> From Session Road or Burnham Park, ride a jeepney with a "Loakan" or "Wright Park" route. Alight near the Wright Park stop — The Mansion gate is a short walk uphill.</p>
+  <a href="map.html?spot=mansion" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+
+<div class="modal" id="modal-session">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="session.jpeg" alt="Session Road">
+  <h2>Session Road</h2>
+  <p><strong>Location:</strong> Session Road, Baguio City (city center)</p>
+  <p><strong>Open:</strong> 24/7 (most shops open 8:00 AM – 10:00 PM)</p>
+  <p><strong>About:</strong> Session Road is the main commercial thoroughfare and cultural center of Baguio City. Lined with restaurants, coffee shops, boutiques, bookstores, and art galleries, it's the perfect place to experience Baguio's urban energy. Every April during Panagbenga Festival, the road transforms into a parade route filled with floats decorated in flowers.</p>
+  <p><strong>Tips:</strong> Walk the entire stretch (about 1 km) to soak it all in. Visit on a Sunday when part of the road closes to traffic for the "Session in Session" market. Try local coffee at one of the many charming cafés.</p>
+  <p><strong> How to get there:</strong> Session Road is Baguio's central hub — almost all jeepney routes pass through here. From the bus terminal (Dangwa or Victory Liner), take any jeepney marked "Session Road" or "City Center."</p>
+  <a href="map.html?spot=session" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+
+<div class="modal" id="modal-cathedral">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="cathedral.jpeg" alt="Baguio Cathedral">
+  <h2>Baguio Cathedral</h2>
+  <p><strong>Location:</strong> Upper Session Road, Baguio City</p>
+  <p><strong>Open:</strong> Daily, 6:00 AM – 8:00 PM (masses held throughout the day)</p>
+  <p><strong>About:</strong> Our Lady of the Atonement Cathedral — popularly known as Baguio Cathedral — is one of the most recognizable landmarks in the city. Perched on a hill at the top of Session Road, its twin pink spires and bright white facade stand out against the green hillside. The cathedral was built in 1936 and is a spiritual and cultural anchor for the city.</p>
+  <p><strong>Tips:</strong> Climb the long staircase from Session Road for a classic Baguio photo. Attend an early morning mass for a peaceful and inspiring experience. The view from the cathedral steps looking down Session Road is spectacular.</p>
+  <p><strong> How to get there:</strong> Walk up from Session Road — the cathedral is at the top of the road. Alternatively, take any jeepney heading to "Mines View" or "Dominican" and ask to be dropped at the cathedral steps.</p>
+  <a href="map.html?spot=cathedral" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+
+<div class="modal" id="modal-loakan">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="pma.jpg" alt="Philippine Military Academy">
+  <h2>Philippine Military Academy</h2>
+  <p><strong>Location:</strong> Fort Del Pilar, Loakan, Baguio City</p>
+  <p><strong>Open:</strong> Daily, 8:00 AM – 5:00 PM (visitor access; valid ID required)</p>
+  <p><strong>About:</strong> The Philippine Military Academy (PMA) is the premier military university of the Philippines, training the country's future military officers. Visitors are welcome in designated areas, including the parade ground, the chapel, and the PMA museum. The beautifully maintained campus amid the pine forests of Loakan is a sight to behold.</p>
+  <p><strong>Tips:</strong> Bring a valid government-issued ID for entry. Visit during the Homecoming parade (usually February) to see cadets in full dress uniform. Photography restrictions apply inside — always ask before shooting.</p>
+  <p><strong> How to get there:</strong> From Session Road or Burnham Park, ride a jeepney with the "Loakan" route. Tell the driver you're heading to PMA — it's the last major stop on that route.</p>
+  <a href="map.html?spot=loakan" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+
+<div class="modal" id="modal-sto_tomas">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="tomas.jpg" alt="Mt. Santo Tomas">
+  <h2>Mt. Santo Tomas</h2>
+  <p><strong>Location:</strong> Tuba, Benguet (near Baguio City)</p>
+  <p><strong>Open:</strong> Best visited at sunrise; accessible by road anytime</p>
+  <p><strong>About:</strong> At 2,260 meters above sea level, Mt. Santo Tomas is the highest peak accessible by vehicle near Baguio City. On clear days, the summit offers a sweeping panorama of the Cordillera mountain range, the Ilocos coastline, and even parts of the South China Sea. A communications tower sits at the summit, and the trails around the mountain are popular among hikers.</p>
+  <p><strong>Tips:</strong> Go before 6:00 AM for a clear sunrise. Bring a jacket — temperatures near the summit can drop to single digits at night. You can rent a motorbike or arrange a jeepney from Baguio proper for the drive up.</p>
+  <p><strong> How to get there:</strong> From Baguio City (Kayang Street terminal), take a jeepney bound for "Sto. Tomas" in Tuba, Benguet. Alternatively, hire a tricycle from the Loakan area or arrange a private vehicle for the summit road.</p>
+  <a href="map.html?spot=sto_tomas" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+
+<div class="modal" id="modal-igorot">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="stone.jpg" alt="Igorot Stone Kingdom">
+  <h2>Igorot Stone Kingdom</h2>
+  <p><strong>Location:</strong> Outlook Drive, Baguio City</p>
+  <p><strong>Open:</strong> Daily, 8:00 AM – 6:00 PM | Entrance fee applies</p>
+  <p><strong>About:</strong> The Igorot Stone Kingdom is a cultural theme park and resort that celebrates the rich heritage of the Cordilleran indigenous peoples. The park features impressive stone structures, tribal sculptures, and architecture inspired by Igorot traditions. It offers hands-on cultural experiences, photo spots, and panoramic mountain views from Outlook Drive.</p>
+  <p><strong>Tips:</strong> Great for family visits and cultural immersion. Wear comfortable walking shoes as the terrain is hilly. Try the local Cordilleran snacks at the park's food stalls.</p>
+  <p><strong> How to get there:</strong> From Session Road, take a jeepney heading toward "Outlook Drive" or "Dominican Hill." Ask the driver or conductor to drop you off at Igorot Stone Kingdom — it's along the main Outlook Drive road.</p>
+  <a href="map.html?spot=igorot" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+
+<div class="modal" id="modal-tam_awan">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="tamawan.jpg" alt="Tam-awan Village">
+  <h2>Tam-awan Village</h2>
+  <p><strong>Location:</strong> Long Long Benguet Road, Pinsao Proper, Baguio City</p>
+  <p><strong>Open:</strong> Daily, 9:00 AM – 6:00 PM | Entrance fee applies</p>
+  <p><strong>About:</strong> Tam-awan Village is a living arts and culture village set on a hillside with breathtaking views of the Baguio valley. It features authentic Ifugao and Kalinga huts brought from mountain provinces, art galleries showcasing indigenous and contemporary Filipino art, and workshops for visitors. Local artists often set up here and the village regularly hosts cultural events and performances.</p>
+  <p><strong>Tips:</strong> Check their Facebook page for upcoming art shows or workshops. Visitors can stay overnight in the traditional huts for a unique experience. The valley view is best in the late afternoon.</p>
+  <p><strong> How to get there:</strong> From Session Road, take a jeepney to "Trancoville" or "Dominican." Then ride a tricycle from there to Tam-awan Village — it's about 10–15 minutes uphill from the main jeepney route.</p>
+  <a href="map.html?spot=tam_awan" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+
+<div class="modal" id="modal-ataki">
+  <button class="modal-close" onclick="closeModal()">✕</button>
+  <img src="camp4.jpeg" alt="Ataki Falls">
+  <h2>Ataki Falls, Camp 3</h2>
+  <p><strong>Location:</strong> Ataki falls, Camp 3, Tuba, Benguet (along Kennon Road, near Baguio City)</p>
+  <p><strong>Open:</strong> Accessible daily; best visited during daylight hours (no entrance fee for general area)</p>
+  <p><strong>About:</strong> Camp 3 in Tuba, Benguet is a historic and scenic stop along Kennon Road, known for its cool mountain air, lush pine surroundings, and proximity to iconic landmarks like Lion’s Head. It serves as a gateway between the lowlands and Baguio City, offering visitors a peaceful resting spot with views of forested slopes and winding mountain roads.</p>
+  <p><strong>Tips:</strong> Bring a jacket as the area can get chilly, especially in the early morning or late afternoon. Be cautious when walking near the roadside, as vehicles frequently pass through Kennon Road. It’s a great quick stop for photos and fresh air.</p>
+  <p><strong>How to get there:</strong> From Baguio City, take a van or jeep bound for Kennon Road or Pangasinan via Kennon. Ask to be dropped off at Camp 4. If coming from the lowlands, it’s one of the last stops before reaching Baguio. Private vehicles can easily access the area via Kennon Road.</p>
+  <a href="map.html?spot=ataki" class="modal-map-btn">📍 View on Map</a>
+</div>
+
+<footer> <!-- Footer section -->
+  <p>&copy; 2026 Travel Guide | Baguio City Tourism</p> <!-- Copyright text -->
+  <p>
+    <a href="https://www.baguio.gov.ph" target="_blank">Official Website</a> <!-- Link to official Baguio website (opens new tab) -->
+    <a href="#">Back to Top</a> <!-- Scrolls back to the top of the page -->
+  </p>
+
+</footer>
+
+<script> <!-- Javascript section -->
+
+  function openModal(id) {
+    document.getElementById('modal-overlay').style.display = 'block'; // Show dark background
+    document.getElementById('modal-' + id).style.display = 'block'; // Show selected modal
+    document.body.style.overflow = 'hidden'; // Stop page scroll
+  }
+  
+  function closeModal() {
+    document.getElementById('modal-overlay').style.display = 'none'; // Hide background
+    document.querySelectorAll('.modal').forEach(function(m) {
+      m.style.display = 'none'; // Hide all modals
+    });
+    document.body.style.overflow = 'auto'; // Enable scroll
+  }
+  
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal(); // Close modal on ESC
+  });
+  
+  (function () { // Auto run when page loads
+  
+    // Get weather data
+    fetch("https://api.open-meteo.com/v1/forecast?latitude=16.4023&longitude=120.5960&current_weather=true")
+      .then(response => response.json())
+      .then(data => {
+        var temp = Math.round(data.current_weather.temperature); // Get temp
+        document.getElementById("weather-temp").textContent = temp + "°C"; // Show temp
+      })
+      .catch(() => {
+        document.getElementById("weather-temp").textContent = "N/A"; // Error fallback
+      });
+  
+    // List of tourist spots
+    var spots = [
+      "Night Market","Burnham Park","Mines View Park","Camp John Hay",
+      "Botanical Garden","Strawberry Farm","BenCab Museum","Wright Park",
+      "Asin Tuba, Benguet","The Mansion","Session Road","Baguio Cathedral",
+      "Philippine Military Academy","Mt. Santo Tomas",
+      "Igorot Stone Kingdom","Tam-awan Village","Ataki Falls"
+    ];
+  
+    var random = Math.floor(Math.random() * spots.length); // Pick random spot
+    document.getElementById("spot").textContent = "📍 " + spots[random]; // Show spot
+  
+    setInterval(() => { // Update time every second
+      var now = new Date(); // Get time
+      document.getElementById("time").textContent =
+        now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); // Show time
+    }, 1000);
+  
+  })();
+</script>
+</body>
+</html>
