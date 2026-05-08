@@ -1,62 +1,133 @@
-# 🌲 Baguio Guides - Accessible Travel Companion
+# 🌲 Baguio Guides – Your Chill Travel Buddy
 
-[![Accessibility](https://img.shields.io/badge/Accessibility-WCAG_2.1_AA-3a9b3a)](https://www.w3.org/WAI/standards-guidelines/wcag/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+**made with ☕ and no sleep**
 
-A fully accessible, responsive web application that serves as a comprehensive travel guide for Baguio City, Philippines. Features interactive maps, tourist spot information, user reviews, and real-time weather data.
+So basically this is a website I made for people who wanna explore Baguio City without getting lost or bored. It's got everything — maps, weather, reviews, and a bunch of cool spots you should totally visit.
 
-## 📋 Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Live Demo](#live-demo)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Accessibility Features](#accessibility-features)
-- [Technologies Used](#technologies-used)
-- [Screenshots](#screenshots)
-- [API Reference](#api-reference)
-- [Contributing](#contributing)
-- [Credits](#credits)
-- [License](#license)
+---
 
-## 🎯 Overview
+##  What's Inside
 
-Baguio Guides is a travel information platform designed to help visitors explore the "City of Pines" with ease. The application provides detailed information about 17+ tourist attractions, an interactive map with location pins, user review system, and real-time local information including weather and time.
+- [What Is This Even](#-what-is-this-even)
+- [Cool Stuff It Can Do](#-cool-stuff-it-can-do)
+- [How The Files Are Organized](#-how-the-files-are-organized)
+- [How To Run It](#-how-to-run-it)
+- [Accessibility](#-accessibility)
+- [Stuff I Used](#-stuff-i-used)
+- [Credits](#-credits)
 
-**Target Audience:** Tourists, travelers, locals, and anyone planning to visit Baguio City
+---
 
-## ✨ Features
+##  What Is This Even
+
+Basically a travel guide site for Baguio City (y'know, the "City of Pines" where it's actually cold in the Philippines lol). I wanted to make something that helps people find cool places to visit without digging through a million Google searches.
+
+Perfect for:
+- Tourists who have no idea where to go
+- Locals who want to rediscover their city
+- Anyone planning a Baguio trip
+
+---
+
+##  Cool Stuff It Can Do
 
 ### Home Page (`index.html`)
-- **Dynamic Attraction Cards** - 17 tourist spots with images and descriptions
-- **Modal Information Windows** - Click any card for detailed attraction info including location, hours, tips, and directions
-- **Real-Time Weather** - Current temperature in Baguio via Open-Meteo API
-- **Live Clock** - Local time display updating every second
-- **Random Spot Recommendation** - Daily suggestion for visitors
-- **Responsive Grid Layout** - Works on desktop, tablet, and mobile
+- **17 attraction cards** with pics and quick descriptions
+- **Click a card** and BOOM — a popup appears with all the details (directions, tips, opening hours, everything)
+- **Live weather** that actually updates (pulls from the internet, not just random numbers)
+- **Real clock** ticking every second so you know what time it is in Baguio
+- **Random spot suggestion** if you're feeling indecisive
+- Works on phones too (responsive layout and all that)
 
-### Interactive Map (`map.html`)
-- **Google Maps Integration** - Interactive map of Baguio City
-- **Location Navigation** - Click any tourist spot to instantly navigate on map
-- **Active Highlighting** - Currently selected spot is visually highlighted
-- **Map Controls** - Zoom, pan, and full interactive map features
-- **Spot-to-Map Linking** - Links from modals on home page bring you directly to specific locations on map
+### Map Page (`map.html`)
+- **Google Map** smack in the middle of the page
+- Click any spot from the list and the map flies to it
+- The button you clicked lights up so you don't forget
+- You can zoom, scroll, do whatever with the map
+- Links from the home page modals go straight to the right spot on the map (so you don't have to search again)
 
 ### Reviews Page (`review.html`)
-- **Review Submission Form** - Name, place visited, and review text
-- **Dynamic Review Display** - New reviews appear at the top of the list
-- **Form Validation** - All fields required before submission
-- **Success Confirmation** - Visual feedback after successful submission
-- **XSS Protection** - HTML escaping for user-submitted content
+- Simple form — put your name, pick a place, write your thoughts
+- New reviews show up at the top (freshest first)
+- Won't let you submit empty stuff (validation says nope)
+- Nice little popup saying "yay, submitted!" so you know it worked
+- Escapes HTML so nobody can do sketchy things in the reviews
 
-### Universal Features
-- **WCAG 2.1 AA Compliant** - Accessible to users with disabilities
-- **Keyboard Navigation** - Full functionality without mouse
-- **Screen Reader Compatible** - Proper ARIA labels and semantic HTML
-- **High Contrast Focus Indicators** - Yellow outline for keyboard focus
-- **Skip Navigation Link** - Jump directly to main content
-- **Responsive Design** - Works on all screen sizes
-- **Consistent Navigation** - Same header and footer across all pages
+### Works Everywhere
+- Keyboard-friendly — you can tab through everything
+- Screen readers can read it properly
+- Yellow outlines show where you are when tabbing
+- Skip-to-content button (nice for people who don't wanna tab through the whole nav)
+- Looks decent on mobile, tablet, and desktop
 
-## 📁 Project Structure
+---
+
+## 📁 How The Files Are Organized
+ baguio-guides/
+├── index.html ← main page with all the attraction cards
+├── map.html ← map page with Google Maps and spot list
+├── review.html ← reviews page with form and review cards
+├── style.css ← all the styling (one file for everything)
+├── Logo.png ← the little logo in the nav bar
+├── background.jpg ← hero section background image
+├── *.jpg / *.jpeg ← images for each attraction and modal
+└── README.md ← this file you're reading 
+
+
+
+---
+
+##  How To Run It
+
+Super easy:
+
+1. Download or clone this whole thing
+2. Open `index.html` in your browser
+3. That's it. No server needed. No npm install. No stress.
+
+Just make sure you have internet for the weather and map to work.
+
+---
+
+##  Accessibility
+
+I actually tried to make this usable for people with different needs:
+
+- **Semantic HTML** — proper headings, landmarks, labels
+- **ARIA labels** where needed (screen readers can understand)
+- **Keyboard navigation** — can use the whole site without a mouse
+- **Focus indicators** — bright yellow outline so you know where you are
+- **Skip link** — jump right to the good stuff
+- **Color contrast** — text is actually readable (not light gray on white like some sites smh)
+- **Responsive** — doesn't break on different screen sizes
+
+---
+
+## 🛠 Stuff I Used
+
+- **HTML5** — structure
+- **CSS3** — making it pretty (gradients, shadows, animations, flexbox, grid)
+- **Vanilla JavaScript** — all the interactivity (no frameworks, just raw JS)
+- **Open-Meteo API** — free weather data (no API key needed, bless them)
+- **Google Maps Embed** — for the interactive map
+- **No frameworks, no libraries** — just plain code (ok maybe I'm a little proud of that)
+
+---
+
+##  Credits
+
+- **Weather data** — [Open-Meteo](https://open-meteo.com/) (free weather API, absolute legend)
+- **Map** — Google Maps
+- **Photos** — taken from various sources (all of Baguio City attractions)
+- **Inspiration** — Baguio City itself. Seriously, go visit if you haven't.
+- **Me** — a tired but happy developer who just wanted to build something useful
+
+
+##  License
+
+This project is licensed under the Accessibility License — basically means anyone can use it, learn from it, or build on top of it. Just don't claim you made it from scratch lol.
+
+Go touch some grass (or pine trees 🌲).
+
+
+**Made with love, caffeine, and the cold Baguio breeze 🍃**
